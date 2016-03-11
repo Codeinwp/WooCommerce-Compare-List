@@ -2,8 +2,8 @@
 Contributors: themeisle
 Tags: woocommerce, compare, compare products, product compare, compare page, compare list, seo
 Requires at least: 3.6
-Tested up to: 3.9.1
-Stable tag: 1.1.0
+Tested up to: 4.4.2
+Stable tag: 1.1.1
 License: GPLv2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
@@ -68,3 +68,7 @@ After you install the plugin, you need to go to WooCommerce settings page. The n
 = 1.0.0 =
 
 * Initial version of the plugin has been developed
+
+= 1.1.1 =
+
+* Update author name
