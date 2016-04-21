@@ -33,7 +33,7 @@ Use **ids** attribute to enter comma/space separated list of products id, which 
 
 ### Configuration ###
 
-If you didn't find the perfect theme for your website, check out this roundup of the <a href="" rel="friend"> best WooCommerce WordPress themes</a>.
+If you didn't find the perfect theme for your website, check out this roundup of the <a href="http://www.codeinwp.com/blog/best-woocommerce-wordpress-themes/" rel="friend"> best WooCommerce WordPress themes</a> or choose between the <a href="http://themeisle.com/wordpress-themes/ecommerce/" rel="friend">eCommerce themes </a> built by us.
 
 After you install the plugin, you need to go to WooCommerce settings page. The new tab **Compare List** will appear there. That tab contains following settings:
 
