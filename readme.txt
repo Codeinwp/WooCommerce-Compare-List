@@ -23,6 +23,8 @@ The plugin uses endpoints technique to build SEO friendly URLs for compare page.
 
 This approach allows users to share their compare lists between their friends to help them choose a product.
 
+For an eCommerce website, fast page loading speed is a must. Slow websites decrease your conversion rate and hurt Search Engines rankings, you should take a look at our beginner's guide on how to find the <a href="http://www.codeinwp.com/blog/fastest-wordpress-hosting/" rel="friend">fastest WordPress hosting</a> for your WooCommerce website.
+
 ### Use shortcode ###
 
 You can use **[products-compare ids="..." atts="..."]** shortcode to embed compare table into your posts or pages. It will give you ability to write neat product review stories where you can compare different products.
@@ -30,6 +32,8 @@ You can use **[products-compare ids="..." atts="..."]** shortcode to embed compa
 Use **ids** attribute to enter comma/space separated list of products id, which should be displayed in the compare table. The **atts** attribute allows you to filter attributes list which should be displayed in the table. Enter comma separated list of attribute slugs which you can find at product attributes page.
 
 ### Configuration ###
+
+If you didn't find the perfect theme for your website, check out this roundup of the <a href="http://www.codeinwp.com/blog/best-woocommerce-wordpress-themes/" rel="friend"> best WooCommerce WordPress themes</a> or choose between the <a href="http://themeisle.com/wordpress-themes/ecommerce/" rel="friend">eCommerce themes</a> built by us.
 
 After you install the plugin, you need to go to WooCommerce settings page. The new tab **Compare List** will appear there. That tab contains following settings:
 
