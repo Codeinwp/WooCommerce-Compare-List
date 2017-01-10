@@ -23,7 +23,7 @@ The plugin uses endpoints technique to build SEO friendly URLs for compare page.
 
 This approach allows users to share their compare lists between their friends to help them choose a product.
 
-For an eCommerce website, fast page loading speed is a must. Slow websites decrease your conversion rate and hurt Search Engines rankings, you should take a look at our beginner's guide on how to find the <a href="http://www.codeinwp.com/blog/fastest-wordpress-hosting/" rel="friend">fastest WordPress hosting</a> for your WooCommerce website.
+For an eCommerce website, fast page loading speed is a must. Slow websites decrease your conversion rate and hurt Search Engines rankings, you should take a look at our beginner's guide on how to find the <a href="http://www.codeinwp.com/blog/fastest-wordpress-hosting/">fastest WordPress hosting</a> for your WooCommerce website.
 
 ### Use shortcode ###
 
@@ -33,7 +33,7 @@ Use **ids** attribute to enter comma/space separated list of products id, which 
 
 ### Configuration ###
 
-If you didn't find the perfect theme for your website, check out this roundup of the <a href="http://www.codeinwp.com/blog/best-woocommerce-wordpress-themes/" rel="friend"> best WooCommerce WordPress themes</a> or choose between the <a href="http://themeisle.com/wordpress-themes/ecommerce/" rel="friend">eCommerce themes</a> built by us.
+If you didn't find the perfect theme for your website, check out this roundup of the <a href="http://www.codeinwp.com/blog/best-woocommerce-wordpress-themes/"> best WooCommerce WordPress themes</a> or choose between the <a href="http://themeisle.com/wordpress-themes/ecommerce/">eCommerce themes</a> built by us.
 
 After you install the plugin, you need to go to WooCommerce settings page. The new tab **Compare List** will appear there. That tab contains following settings:
 
