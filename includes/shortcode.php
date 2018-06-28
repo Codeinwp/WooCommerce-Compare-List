@@ -80,7 +80,7 @@ function wccm_compare_shortcode( $atts, $content = '' ) {
 function wccm_compare_list_render( $list, $attributes = array() ) {
 	$products = array();
 	foreach ( $list as $product_id ) {
-		$product = get_product( $product_id );
+		$product = wc_get_product( $product_id );
 		if ( $product ) {
 			$products[$product_id] = $product;
 		}
@@ -157,8 +157,8 @@ function wccm_compare_list_render_attributes( $products, $selected_attributes = 
 					);
 				}
 
-				$attributes[$attribute_id]['products'][$product->id] = $attribute['is_taxonomy']
-					? wc_get_product_terms( $product->id, $attribute['name'], array( 'fields' => 'names' ) )
+				$attributes[$attribute_id]['products'][$product->get_id()] = $attribute['is_taxonomy']
+					? wc_get_product_terms( $product->get_id(), $attribute['name'], array( 'fields' => 'names' ) )
 					: array_map( 'trim', explode( WC_DELIMITER, $attribute['value'] ) );
 			}
 		}
@@ -175,7 +175,7 @@ function wccm_compare_list_render_attributes( $products, $selected_attributes = 
 						echo '<tr>';
 							foreach ( $products as $product ) {
 								echo '<td class="wccm-td">';
-									$values = !empty( $attribute['products'][$product->id] ) ? $attribute['products'][$product->id] : array( '&#8212;' );
+									$values = !empty( $attribute['products'][$product->get_id()] ) ? $attribute['products'][$product->get_id()] : array( '&#8212;' );
 									echo apply_filters( 'woocommerce_attribute', wpautop( wptexturize( implode( ', ', $values ) ) ), $attribute, $values );
 								echo '</td>';
 							}

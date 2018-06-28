@@ -63,7 +63,7 @@ function wccm_render_catalog_compare_info() {
 
 	echo '<div class="wccm-catalog-items">';
 		foreach ( $list as $product_id ) {
-			$product = get_product( $product_id );
+			$product = wc_get_product( $product_id );
 			if ( $product ) {
 				echo '<div class="wccm-catalog-item">';
 					echo $product->get_image();
@@ -78,7 +78,7 @@ function wccm_render_catalog_compare_info() {
 		echo '</div>';
 
 		echo '<div class="wccm-catalog-item">';
-			echo '<a class="button alt" href="', esc_url( wccm_get_compare_link( implode( ',', $list ), 'remove-from-list' ) ), '">', esc_html__( 'Cancel', 'wccm' ), '</a>';
+			echo '<a class="button compare alt" href="', esc_url( wccm_get_compare_link( implode( ',', $list ), 'remove-from-list' ) ), '">', esc_html__( 'Cancel', 'wccm' ), '</a>';
 		echo '</div>';
 
 		echo '<div style="clear:both"></div>';

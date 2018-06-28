@@ -71,7 +71,7 @@ function wccm_add_button() {
 		$text = get_option( 'wccm_remove_text', __( 'Remove compare', 'wccm' ) );
 		echo '<a href="', esc_url( $url ), '" class="', implode( ' ', $classes ), '">', esc_html( $text ), '</a>';
 		if ( is_single() ) {
-			echo '<a href="', wccm_get_compare_page_link( wccm_get_compare_list() ), '" class="button alt">', __( 'View compare', 'wccm' ), '</a>';
+			echo '<a href="', wccm_get_compare_page_link( wccm_get_compare_list() ), '" class="button compare alt">', __( 'View compare', 'wccm' ), '</a>';
 		}
 	} else {
 		$url = wccm_get_compare_link( $product_id, 'add-to-list' );
@@ -129,7 +129,7 @@ function wccm_process_button_action() {
  * @param int $product_id The product id to add to the compare list.
  */
 function wccm_add_product_to_compare_list( $product_id ) {
-	$product = get_product( $product_id );
+	$product = wc_get_product( $product_id );
 	if ( !$product ) {
 		return;
 	}
