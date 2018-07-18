@@ -1,4 +1,5 @@
-.wccm-compare-btn {
+.wccm-compare-btn,
+.woocommerce.single-product .wccm-compare-btn {
     display: inline-block;
     margin: 10px 5px;
 }
