@@ -54,3 +54,13 @@ function wccm_launch() {
 
 	return true;
 }
+
+/**
+ * Loads wccm-style.css file on any page
+ *
+ * @since 1.1.2
+ */
+function wccm_enqueue_style() {
+	wp_enqueue_style( 'wccm-style', plugins_url( 'css/wccm-style.css', __FILE__ ), array(), WCCM_VERISON );
+}
+add_action( 'wp_enqueue_scripts', 'wccm_enqueue_style' );

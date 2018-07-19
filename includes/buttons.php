@@ -69,14 +69,14 @@ function wccm_add_button() {
 	if ( in_array( $product_id, wccm_get_compare_list() ) ) {
 		$url = wccm_get_compare_link( $product_id, 'remove-from-list' );
 		$text = get_option( 'wccm_remove_text', __( 'Remove compare', 'wccm' ) );
-		echo '<a href="', esc_url( $url ), '" class="', implode( ' ', $classes ), '">', esc_html( $text ), '</a>';
+		echo '<a href="wccm-button', esc_url( $url ), '" class="', implode( ' ', $classes ), '">', esc_html( $text ), '</a>';
 		if ( is_single() ) {
-			echo '<a href="', wccm_get_compare_page_link( wccm_get_compare_list() ), '" class="button alt">', __( 'View compare', 'wccm' ), '</a>';
+			echo '<a href="', wccm_get_compare_page_link( wccm_get_compare_list() ), '" class="wccm-button button alt">', __( 'View compare', 'wccm' ), '</a>';
 		}
 	} else {
 		$url = wccm_get_compare_link( $product_id, 'add-to-list' );
 		$text = get_option( 'wccm_compare_text', __( 'Compare', 'wccm' ) );
-		echo '<a href="', esc_url( $url ), '" class="', implode( ' ', $classes ), '">', esc_html( $text ), '</a>';
+		echo '<a href="', esc_url( $url ), '" class="wccm-button ', implode( ' ', $classes ), '">', esc_html( $text ), '</a>';
 	}
 }
 
