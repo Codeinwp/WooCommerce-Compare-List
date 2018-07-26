@@ -62,5 +62,14 @@ function wccm_launch() {
  */
 function wccm_enqueue_style() {
 	wp_enqueue_style( 'wccm-style', plugins_url( 'css/wccm-style.css', __FILE__ ), array(), WCCM_VERISON );
+
+	$current_theme_template = wp_get_theme()->template;
+
+	if ( $current_theme_template === 'zerif-lite' || $current_theme_template === 'zerif-pro' ) {
+		wp_enqueue_style( 'wccm-style-for-zerif-lite', plugins_url( 'css/zerif.css', __FILE__ ), array(), WCCM_VERISON );
+	}
+	if ( $current_theme_template === 'shop-isle-pro' || $current_theme_template === 'shop-isle' ) {
+		wp_enqueue_style( 'wccm-style-for-shop-isle', plugins_url( 'css/shop-isle.css', __FILE__ ), array(), WCCM_VERISON );
+	}
 }
 add_action( 'wp_enqueue_scripts', 'wccm_enqueue_style' );
