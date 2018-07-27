@@ -65,11 +65,96 @@ function wccm_enqueue_style() {
 
 	$current_theme_template = wp_get_theme()->template;
 
-	if ( $current_theme_template === 'zerif-lite' || $current_theme_template === 'zerif-pro' ) {
-		wp_enqueue_style( 'wccm-style-for-zerif-lite', plugins_url( 'css/zerif.css', __FILE__ ), array(), WCCM_VERISON );
-	}
-	if ( $current_theme_template === 'shop-isle-pro' || $current_theme_template === 'shop-isle' ) {
-		wp_enqueue_style( 'wccm-style-for-shop-isle', plugins_url( 'css/shop-isle.css', __FILE__ ), array(), WCCM_VERISON );
-	}
+	wccm_style_for_hestia( $current_theme_template );
+
+	wccm_style_for_zerif( $current_theme_template );
+
+	wccm_style_for_shop_isle( $current_theme_template );
+
 }
 add_action( 'wp_enqueue_scripts', 'wccm_enqueue_style' );
+
+/**
+ * Compatibility with Hestia theme
+ *
+ * @since 1.1.2
+ */
+function wccm_style_for_hestia( $current_theme_template ) {
+
+	if ( $current_theme_template !== 'hestia' && $current_theme_template !== 'hestia-pro' ) {
+		return;
+	}
+
+	wp_enqueue_style( 'wccm-style-for-hestia', plugins_url( 'css/hestia.css', __FILE__ ), array(), WCCM_VERISON );
+
+	$hestia_accent_color = get_theme_mod( 'accent_color' );
+
+	if ( ! $hestia_accent_color ) {
+		return;
+	}
+
+	$custom_css = '';
+
+	/* Button and hover state background color */
+	$custom_css .= '
+		.woocommerce.archive .wccm-button,
+		.woocommerce.archive .wccm-button:hover,
+		.woocommerce.archive .wccm-catalog-item a.button,
+		.woocommerce.archive .wccm-catalog-item a.button:hover,
+		.woocommerce.single-product .wccm-button,
+		.woocommerce.single-product .wccm-button:hover {
+			background-color: ' . esc_html( $hestia_accent_color ) . ';
+	}';
+
+	if ( function_exists( 'hestia_hex_rgba' ) ) {
+		/* Button's box-shadow */
+		$custom_css .= '	
+			.woocommerce.archive .wccm-button,
+			.woocommerce.archive .wccm-catalog-item a.button,
+			.woocommerce.single-product .wccm-button {
+				-webkit-box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $hestia_accent_color, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $hestia_accent_color, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $hestia_accent_color, '0.12' ) . ';
+	    box-shadow: 0 2px 2px 0 ' . hestia_hex_rgba( $hestia_accent_color, '0.14' ) . ',0 3px 1px -2px ' . hestia_hex_rgba( $hestia_accent_color, '0.2' ) . ',0 1px 5px 0 ' . hestia_hex_rgba( $hestia_accent_color, '0.12' ) . ';
+			}';
+
+		/* Button's box-shadow on hover state */
+		$custom_css .= '				
+			.woocommerce.archive .wccm-button:hover,
+			.woocommerce.archive .wccm-catalog-item a.button:hover,
+			.woocommerce.single-product .wccm-button:hover {
+				-webkit-box-shadow: 0 14px 26px -12px' . hestia_hex_rgba( $hestia_accent_color, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $hestia_accent_color, '0.2' ) . ';
+	    box-shadow: 0 14px 26px -12px ' . hestia_hex_rgba( $hestia_accent_color, '0.42' ) . ',0 4px 23px 0 rgba(0,0,0,0.12),0 8px 10px -5px ' . hestia_hex_rgba( $hestia_accent_color, '0.2' ) . ';
+		color: #fff;
+			}';
+	}
+
+	wp_add_inline_style( 'wccm-style', $custom_css );
+}
+
+/**
+ * Compatibility with Zerif theme
+ *
+ * @since 1.1.2
+ */
+function wccm_style_for_zerif( $current_theme_template ) {
+
+	if ( $current_theme_template !== 'zerif-lite' && $current_theme_template !== 'zerif-pro' ) {
+		return;
+	}
+
+	wp_enqueue_style( 'wccm-style-for-zerif', plugins_url( 'css/zerif.css', __FILE__ ), array(), WCCM_VERISON );
+}
+
+/**
+ * Compatibility with Shop Isle theme
+ *
+ * @since 1.1.2
+ */
+function wccm_style_for_shop_isle( $current_theme_template ) {
+
+	if ( $current_theme_template !== 'shop-isle-pro' && $current_theme_template !== 'shop-isle' ) {
+		return;
+	}
+
+	wp_enqueue_style( 'wccm-style-for-shop-isle', plugins_url( 'css/shop-isle.css', __FILE__ ), array(), WCCM_VERISON );
+
+}
