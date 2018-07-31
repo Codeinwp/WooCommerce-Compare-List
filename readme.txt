@@ -3,7 +3,7 @@ Contributors: themeisle
 Tags: woocommerce, compare, compare products, product compare, compare page, compare list, seo
 Requires at least: 3.6
 Tested up to: 4.7
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: http://www.opensource.org/licenses/gpl-license.php
 
